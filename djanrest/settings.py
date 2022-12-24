@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-zz59i9bgop6i^xmu%i(ar9eitl!xrj8tzf#o2nu1e362olbdy-
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ["127.0.0.1:8000",]
+ALLOWED_HOSTS = ["*", "https://djanrest-jd78.vercel.app"]
 
 
 # Application definition
