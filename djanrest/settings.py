@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dj_database_url
+from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-zz59i9bgop6i^xmu%i(ar9eitl!xrj8tzf#o2nu1e362olbdy-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ["127.0.0.1:8000",]
 
 
 # Application definition
@@ -93,7 +97,7 @@ AUTHENTICATION_BACKENDS = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR, "/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,6 +122,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+DATABASES['default'] = dj_database_url.config()
 
 AUTH_USER_MODEL = 'modapp.MyUser'
 # Password validation
@@ -157,6 +163,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR/ "staticfiles_build"/ "static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

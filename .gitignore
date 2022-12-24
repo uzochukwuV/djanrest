@@ -3,3 +3,5 @@ Scripts
 *.cfg
 Lib
 vite-project
+*.env
+*.sqlite3
