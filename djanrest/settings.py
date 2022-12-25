@@ -19,7 +19,7 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+DEBUG = True
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-zz59i9bgop6i^xmu%i(ar9eitl!xrj8tzf#o2nu1e362olbdy-
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ["*", "https://djanrest-jd78.vercel.app"]
+ALLOWED_HOSTS = ["*", "https://djanrest-jd78.vercel.app", "https://djanrest-jd78.vercel.app"]
 
 
 # Application definition
